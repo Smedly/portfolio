@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mateo Eaton | Senior Content Producer & Studio Executive</title>
+  <style>
+    :root {
+      --bg: #121212;
+      --card-bg: #1e1e1e;
+      --text: #e0e0e0;
+      --accent: #ff5722;
+      --text-muted: #a0a0a0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px 40px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .bio {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 800px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #2a2a2a;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      margin: 0 0 10px;
+      color: #ffffff;
+    }
+    .meta-tag {
+      display: inline-block;
+      background: #2a2a2a;
+      color: var(--accent);
+      padding: 4px 8px;
+      font-size: 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .card-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    footer {
+      border-top: 1px solid #2a2a2a;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mateo Eaton</h1>
+    <div class="subtitle">Integrated Production Lead & Global Studio Executive</div>
+    <p class="bio">
+      18+ years producing commercial campaigns, creator-led digital video, and regional television engines across global markets. Specialist in scalable content infrastructure, multi-million dollar P&Ls, and high-craft storytelling.
+    </p>
+  </header>
+
+  <div class="container">
+    <h2>Selected Work & Case Studies</h2>
+    <div class="grid">
+      
+      <!-- Project Card 1 -->
+      <div class="card">
+        <div class="video-container">
+          <!-- Replace VIDEO_ID with your YouTube unlisted video ID -->
+          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <span class="meta-tag">NESTLÉ / BRAND INTEGRATION</span>
+          <h3 class="card-title">Regional Branded Content Engine</h3>
+          <p class="card-text">
+            <strong>Role:</strong> Executive Producer<br>
+            <strong>Deliverables:</strong> 3x TV Series Episodes, 15x Social Video Cuts<br>
+            <strong>Scale:</strong> $10M+ Revenue, Multi-market APAC distribution
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="card">
+        <div class="video-container">
+          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <span class="meta-tag">FLAGSHIP TV / COMEDY</span>
+          <h3 class="card-title">Camera Café Regional Series</h3>
+          <p class="card-text">
+            <strong>Role:</strong> Executive Producer / Director<br>
+            <strong>Deliverables:</strong> Full Season Linear & Digital Delivery<br>
+            <strong>Scale:</strong> High-volume multi-camera studio workflow
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Contact: <a href="mailto:bianfuxia@gmail.com">bianfuxia@gmail.com</a> | <a href="https://linkedin.com/in/mateoeaton" target="_blank">LinkedIn</a> | <a href="https://github.com/Smedly" target="_blank">GitHub</a></p>
+  </footer>
+
+</body>
+</html>
