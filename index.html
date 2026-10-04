@@ -1,168 +1,865 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mateo Eaton | Senior Content Producer & Studio Executive</title>
-  <style>
-    :root {
-      --bg: #121212;
-      --card-bg: #1e1e1e;
-      --text: #e0e0e0;
-      --accent: #ff5722;
-      --text-muted: #a0a0a0;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 20px 40px;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-    .subtitle {
-      font-size: 1.2rem;
-      color: var(--accent);
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-    .bio {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 800px;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px 60px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .card {
-      background-color: var(--card-bg);
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid #2a2a2a;
-    }
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0;
-      overflow: hidden;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .card-body {
-      padding: 20px;
-    }
-    .card-title {
-      font-size: 1.25rem;
-      margin: 0 0 10px;
-      color: #ffffff;
-    }
-    .meta-tag {
-      display: inline-block;
-      background: #2a2a2a;
-      color: var(--accent);
-      padding: 4px 8px;
-      font-size: 0.8rem;
-      border-radius: 4px;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-    .card-text {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-    footer {
-      border-top: 1px solid #2a2a2a;
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mateo Eaton | Senior Content Producer & Studio Director</title>
+<link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --bg: #111111;
+  --card-bg: #1a1a1a;
+  --accent: #ff5722;
+  --text: #e1e1e1;
+  --text-muted: #999999;
+  --border: #262626;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Sticky Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(17, 17, 17, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  padding: 16px 0;
+}
+
+.nav-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 0.88rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Hero & Sizzle Reel Layout */
+.hero {
+  position: relative;
+  padding: 40px 20px 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-overlay {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.hero .subtitle {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #cccccc;
+  max-width: 780px;
+  margin: 0 auto 30px;
+}
+
+/* Fullscreen Intro Overlay for Sizzle Reel */
+.hero-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-fullscreen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-prompt {
+  position: absolute;
+  bottom: 40px;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12px 24px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+
+/* Permanent Header Video Container (post-click shrink target) */
+.sizzle-inline-wrapper {
+  max-width: 1080px;
+  margin: 30px auto 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--border);
+}
+
+.sizzle-inline-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Section Headers */
+.section-title {
+  max-width: 1080px;
+  margin: 70px auto 25px;
+  padding: 0 20px 10px;
+  border-bottom: 1px solid var(--border);
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+
+/* Grid Layout */
+.grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 30px;
+}
+
+/* Project Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.card-body {
+  padding: 22px;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.card-description {
+  font-size: 0.92rem;
+  color: #cccccc;
+  margin-bottom: 14px;
+}
+
+.spec-list {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.spec-list li {
+  margin-bottom: 6px;
+}
+
+.spec-list strong {
+  color: var(--text);
+}
+
+/* About & Capabilities Section */
+.about-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.about-bio {
+  font-size: 1.05rem;
+  color: #cccccc;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.capability-card {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.capability-card h3 {
+  color: var(--accent);
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.capability-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+</style>
 </head>
 <body>
 
-  <header>
+<!-- Fullscreen Intro Overlay for Sizzle Reel -->
+<div id="hero-overlay" class="hero-fullscreen">
+  <video id="hero-video" autoplay loop muted playsinline controls poster="poster.jpg">
+    <source src="assets/video/Mateo-Sizzle-Reel.mp4" type="video/mp4">
+    Your browser does not support video playback.
+  </video>
+  <div class="overlay-prompt">
+    <span>Click or press any key to enter portfolio</span>
+  </div>
+</div>
+
+<!-- Sticky Header Navigation -->
+<nav>
+  <div class="nav-container">
+    <div class="brand">MATEO EATON</div>
+    <div class="nav-links">
+      <a href="#commercial">Commercial & Branded</a>
+      <a href="#entertainment">TV & Film</a>
+      <a href="#digital">Digital & Social</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section with Permanent Header Video Slot -->
+<section class="hero">
+  <div class="hero-overlay">
     <h1>Mateo Eaton</h1>
     <div class="subtitle">Integrated Production Lead & Global Studio Executive</div>
-    <p class="bio">
-      18+ years producing commercial campaigns, creator-led digital video, and regional television engines across global markets. Specialist in scalable content infrastructure, multi-million dollar P&Ls, and high-craft storytelling.
-    </p>
-  </header>
+    <p>Two decades producing commercial campaigns, creator-led digital video, and regional branded content across global markets. Specialist in scalable content infrastructure, multi-million dollar P&Ls, and high-craft storytelling.</p>
+  </div>
+  
+  <div id="inline-video-placeholder" class="sizzle-inline-wrapper">
+    <!-- JavaScript moves the <video> element here after click or keypress -->
+  </div>
+</section>
 
-  <div class="container">
-    <h2>Selected Work & Case Studies</h2>
-    <div class="grid">
-      
-      <!-- Project Card 1 -->
-      <div class="card">
-        <div class="video-container">
-          <!-- Replace VIDEO_ID with your YouTube unlisted video ID -->
-          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" allowfullscreen></iframe>
-        </div>
-        <div class="card-body">
-          <span class="meta-tag">NESTLÉ / BRAND INTEGRATION</span>
-          <h3 class="card-title">Regional Branded Content Engine</h3>
-          <p class="card-text">
-            <strong>Role:</strong> Executive Producer<br>
-            <strong>Deliverables:</strong> 3x TV Series Episodes, 15x Social Video Cuts<br>
-            <strong>Scale:</strong> $10M+ Revenue, Multi-market APAC distribution
-          </p>
-        </div>
+<!-- 1. Commercial & Branded Content -->
+<h2 id="commercial" class="section-title">Commercial & Branded Content</h2>
+<div class="grid">
+
+  <!-- Camera Cafe Promo Card - local support -->
+   <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Camera-Cafe.png" 
+        class="inline-video-player">
+        <source src="assets/video/CC-Promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
       </div>
-
-      <!-- Project Card 2 -->
-      <div class="card">
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" allowfullscreen></iframe>
-        </div>
-        <div class="card-body">
-          <span class="meta-tag">FLAGSHIP TV / COMEDY</span>
-          <h3 class="card-title">Camera Café Regional Series</h3>
-          <p class="card-text">
-            <strong>Role:</strong> Executive Producer / Director<br>
-            <strong>Deliverables:</strong> Full Season Linear & Digital Delivery<br>
-            <strong>Scale:</strong> High-volume multi-camera studio workflow
-          </p>
-        </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Caméra Café — Season 2 Promo</h3>
+      <p class="card-description">Led the creative direction and promotional rollout for Season 2 of Nescafé’s flagship digital comedy series.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Executive Producer</li>
+        <li><strong>Brand:</strong> Nestlé / Nescafé</li>
+        <li><strong>Scope:</strong> Digital Season Campaign</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Ford Race Papa episode Card - local support -->
+   <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Race-Papa.png" 
+        class="inline-video-player">
+        <source src="assets/video/Race-Papa-ep1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
       </div>
-
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Race Papa — Ford (Episode 1)</h3>
+      <p class="card-description">Executive produced an episodic digital short-form series designed for social channels, showcasing grassroots motorsport culture to support Ford's regional brand positioning.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Executive Producer</li>
+        <li><strong>Brand:</strong> Ford Racing Team</li>
+        <li><strong>Scope:</strong> Episodic Social Digital Series</li>
+      </ul>
     </div>
   </div>
 
-  <footer>
-    <p>Contact: <a href="mailto:bianfuxia@gmail.com">bianfuxia@gmail.com</a> | <a href="https://linkedin.com/in/mateoeaton" target="_blank">LinkedIn</a> | <a href="https://github.com/Smedly" target="_blank">GitHub</a></p>
-  </footer>
+  <!-- Soccer Prince Promo Card - local support -->
+  <div class="card">
+    <div class="video-container">
+      <video 
+        
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Soccer-Prince.png" 
+        class="inline-video-player">
+        <source src="assets/video/Soccer-Prince-Promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Soccer Prince — Show Promo</h3>
+      <p class="card-description">Executive produced Hunan TV’s nationwide sports reality series, managing large-scale multi-camera field operations, talent logistics, and prime-time network delivery.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Executive Producer</li>
+        <li><strong>Network:</strong> Hunan TV</li>
+        <li><strong>Scope:</strong> Prime-time Unscripted Broadcast</li>
+      </ul>
+    </div>
+  </div>
 
+  <!-- Ugly Betty Lipton Ad Card - local support -->
+  <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Lipton-TVC.png" 
+        class="inline-video-player">
+        <source src="assets/video/UB-Lipton-Ad.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Ugly Betty — Lipton Commercial</h3>
+      <p class="card-description">Produced high-impact commercial assets leveraging broadcast IP rights and character integration for Unilever’s Lipton campaign across tv and digital channels.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Production Lead</li>
+        <li><strong>Brand:</strong> Lipton (Unilever)</li>
+        <li><strong>Scope:</strong> Commercial TVC & Usage Rights</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- 2. TV & Entertainment -->
+<h2 id="entertainment" class="section-title">TV & Entertainment</h2>
+<div class="grid">
+
+  <!-- Ugly Betty Case Study Card - local support ()"controls" was remoeved under <video)-->
+  <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Ugly-Betty.png" 
+        class="inline-video-player">
+        <source src="assets/video/UB-Case-Study.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Ugly Betty Multi-brand Integration</h3>
+      <p class="card-description">Orchestrated major multi-brand sponsorship packages for Hunan TV’s hit adaptation, securing Unilever’s largest-ever broadcast partnership (Dove, Clear, Lipton, Wall's) alongside integrations for Bausch & Lomb and Perfetti Van Melle.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Sponsorship Lead</li>
+        <li><strong>Brand:</strong> Hunan TV & Unilever Group</li>
+        <li><strong>Scope:</strong> Multi-brand Integration & Content Licensing</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Soccer Prince Case Study Card - local support -->
+  <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Soccer-Prince-TV.png" 
+        class="inline-video-player">
+        <source src="assets/video/Soccer-Prince-Case-Study.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Soccer Prince — Case Study</h3>
+      <p class="card-description">Strategic overview highlighting audience ratings, commercial sponsorship integration, and multi-platform promotional reach for Hunan TV's unscripted property.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Executive Producer</li>
+        <li><strong>Network:</strong> Hunan TV</li>
+        <li><strong>Scope:</strong> Brand Strategy & Case Study</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Soccer Prince Case Study Card - local support -->
+   <div class="card">
+  <div class="video-container">
+    <video 
+       
+      playsinline 
+      preload="metadata"
+      poster="assets/thumbnail/TU.png" 
+      class="inline-video-player">
+      <source src="assets/video/Travel-Unraveled-Intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">Travel Unraveled Extended Promo</h3>
+    <p class="card-description">Executive produced and co-wrote this hit English language broadcast travel series on Shanghai’s national satellite TV network. Spearheaded nationwide field shoots across China and secured high-profile brand integrations and sponsorships with Holiday Inn, Quiksilver, and Bacardi.</p>
+    <ul class="spec-list">
+      <li><strong>Role:</strong> Executive Producer / Co-Writer</li>
+      <li><strong>Network:</strong> Shanghai Dragon TV (National Satellite)</li>
+      <li><strong>Scope:</strong> Broadcast Series & Brand Partnerships</li>
+    </ul>
+  </div>
+</div>
+
+  <!-- Transformers Card - local support -->
+  <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Transformers.png" 
+        class="inline-video-player">
+        <source src="assets/video/Transformers-shuhua-milk.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Transformers: Dark of the Moon</h3>
+      <p class="card-description">Negotiated and executed the iconic (wacky)on-screen product placement and brand partnership between Paramount Pictures’ blockbuster film and Yili Shuhua Milk.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Brand Integration Negotiator</li>
+        <li><strong>Partners:</strong> Paramount Pictures & Yili Shuhua Milk</li>
+        <li><strong>Scope:</strong> Global Feature Film Product Placement</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ANTM Case Study Card - local support -->
+  <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/ANTM.png" 
+        class="inline-video-player">
+        <source src="assets/video/ANTM-Case-Study.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Asia's Next Top Model</h3>
+      <p class="card-description">Negotiated and executed pan-Asian broadcast sponsorship and digital rights for Unilever's TRESemmé across Star TV network territories, pairing broadcast visibility with multi-market retail usage rights.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Sponsorship Lead / Producer</li>
+        <li><strong>Brand:</strong> TRESemmé (Star TV)</li>
+        <li><strong>Scope:</strong> Pan-Asian Broadcast Sponsorship</li>
+      </ul>
+    </div>
+  </div>
+
+<!-- CGT Case Study Card - local support -->
+  <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/CGT.png" 
+        class="inline-video-player">
+        <source src="assets/video/CGT.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">China's Got Talent — P&G Integration</h3>
+      <p class="card-description">Managed contractual rights, asset usage guidelines, and broadcast commercial execution for Procter & Gamble across one of China’s highest-rated entertainment formats.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Asset & Rights Manager</li>
+        <li><strong>Partners:</strong> P&G & China's Got Talent</li>
+        <li><strong>Scope:</strong> Asset Rights & Sponsorship Delivery</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Camera Cafe Episode 8 Card - local support -->
+   <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Camera-Cafe.png" 
+        class="inline-video-player">
+        <source src="assets/video/CC-EP08-EN.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Caméra Café — Season 1 Episode 8</h3>
+      <p class="card-description">Secured international format licensing rights from France and produced 3 full seasons of the tailored digital sitcom, securing multi-million dollar backing from Nestlé's Nescafé.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Executive Producer / Director</li>
+        <li><strong>Brand:</strong> Nestlé / Nescafé</li>
+        <li><strong>Scope:</strong> Format Licensing & 3-Season Digital Sitcom</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- 3. Digital & Social -->
+<h2 id="digital" class="section-title">Digital & Social</h2>
+<div class="grid">
+
+  <!-- Camera Cafe Case Study Card - local support -->
+   <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Camera-Cafe.png" 
+        class="inline-video-player">
+        <source src="assets/video/CC-Case-Study.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Caméra Café — Case Study</h3>
+      <p class="card-description">Analysis of international IP acquisition, branded content monetization, and long-term ROI metrics delivered for Nestlé's Nescafé franchise.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Executive Producer</li>
+        <li><strong>Brand:</strong> Nestlé / Nescafé</li>
+        <li><strong>Scope:</strong> Format Monetization & Campaign Analysis</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Dr. Car Case Study Card - local support -->
+   <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Dr.-Car.png" 
+        class="inline-video-player">
+        <source src="assets/video/Dr.-Car-Case-Study.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Dr. Car — Ford Focus Case Study</h3>
+      <p class="card-description">Spearheaded a video-first utility platform delivering educational online support program teaching car maintenance basics (tire changing, jump-starting batteries, routine care) building long-term driver engagement and brand affinity for Ford Focus.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Executive Producer</li>
+        <li><strong>Brand:</strong> Ford Focus</li>
+        <li><strong>Scope:</strong> Educational Video Utility & Case Study</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Vichy Spa Card - local support -->
+  <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Vichy-Spa-thumb.png" 
+        class="inline-video-player">
+        <source src="assets/video/Vichy-Promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">L’Oréal / Vichy Spa Original Series</h3>
+      <p class="card-description">Conceptualized and executive produced an original digital series for L'Oréal's Vichy skincare line featuring A-list celebrity talent, driving high engagement across digital brand touchpoints.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Executive Producer</li>
+        <li><strong>Brand:</strong> L'Oréal / Vichy</li>
+        <li><strong>Scope:</strong> Digital Commercial Series</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Pregnany Bible Promo Card - local support -->
+  <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Pregnancy-Bible.png" 
+        class="inline-video-player">
+        <source src="assets/video/PB-Promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Pregnancy Bible Promo</h3>
+      <p class="card-description">Pitched, secured, and executive produced a multi-million dollar, 3-season digital content ecosystem for Nestlé, delivering trusted educational video utility for expectant mothers across Greater China.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Executive Producer</li>
+        <li><strong>Brand:</strong> Nestlé</li>
+        <li><strong>Scope:</strong> 3-Season Digital Series</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Pond's Muddy Romance Promo Card - local support -->
+  <div class="card">
+    <div class="video-container">
+      <video 
+         
+        playsinline 
+        preload="metadata"
+        poster="assets/thumbnail/Pond's-Muddy-Romance.png" 
+        class="inline-video-player">
+        <source src="assets/video/Pond's-Muddy-Romance-Promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- ADD THIS OVERLAY BLOCK INSIDE VIDEO-CONTAINER -->
+      <!--<div class="thumb-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';"> -->
+        <div class="thumb-overlay" onclick="startVideoPlayback(this)">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Pond's — Muddy Romance Promo</h3>
+      <p class="card-description">Developed and produced a custom online reality format centered on outdoor endurance challenges, seamlessly tying brand messaging to Pond's core mud-mask beauty portfolio.</p>
+      <ul class="spec-list">
+        <li><strong>Role:</strong> Executive Producer</li>
+        <li><strong>Brand:</strong> Pond's (Unilever)</li>
+        <li><strong>Scope:</strong> Online Branded Reality Series</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Space reserved for upcoming video additions -->
+
+</div>
+
+<!-- 4. About Section -->
+<h2 id="about" class="section-title">About & Operational Capabilities</h2>
+<div class="about-container">
+  <p class="about-bio">
+    With over 20 years of hands-on production experience spanning North America and APAC, I lead end-to-end studio operations, commercial video campaigns, and complex entertainment partnerships. My work sits at the intersection of high-craft visual storytelling and scalable modern technology—building resilient production pipelines, leading multidisciplinary teams, and protecting core creative vision under strict brand guidelines.
+  </p>
+  <div class="capabilities-grid">
+    <div class="capability-card">
+      <h3>Global Scale & P&L Oversight</h3>
+      <p>Managed multi-million dollar regional production budgets ($10M+), multi-location field shoots, and complex international talent and IP rights negotiations.</p>
+    </div>
+    <div class="capability-card">
+      <h3>Enterprise Brand Guardianship</h3>
+      <p>Direct experience managing strict protective brand standards for FMCG powerhouses including Nestlé, Unilever, P&G, L'Oréal, Ford, and Yili.</p>
+    </div>
+    <div class="capability-card">
+      <h3>Modern Technical Workflows</h3>
+      <p>Architect of modern digital asset management (DAM) taxonomies, custom production web utilities, and AI-assisted post-production workflows.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Contact: <a href="mailto:bianfuxia@gmail.com">bianfuxia@gmail.com</a> | <a href="https://linkedin.com/in/mateoeaton" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://github.com/Smedly" target="_blank" rel="noopener">GitHub</a></p>
+</footer>
+
+<script src="main.js"></script>
+
+<!-- Single Shared Video Modal for All Cards -->
+<div id="video-modal" class="video-modal" onclick="closeVideoModal()">
+  <div class="video-modal-content" onclick="event.stopPropagation()">
+    <button class="close-modal-btn" onclick="closeVideoModal()">&times;</button>
+    <div class="modal-iframe-wrapper">
+      <iframe id="modal-player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>
